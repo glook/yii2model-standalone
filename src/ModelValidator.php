@@ -3,7 +3,7 @@
  * Created by: Andrey Polyakov (andrey@polyakov.im)
  */
 
-namespace  Glook\Yii2Model;
+namespace Glook\Yii2Model;
 
 
 class ModelValidator
@@ -152,8 +152,8 @@ class ModelValidator
         $rule = $this->getRule($model, $attribute);
         if ($rule) {
             $baseValidator = $model->getValidator();
-            $validator = $baseValidator->withData($model->getAttributes(), [$attribute]);
-            $currentRule = $validator->rule(...$rule);
+            $validator = $baseValidator->withData($model->getAttributes());
+            $currentRule = call_user_func_array(array($validator, 'rule'), $rule);
             // adding custom error message if exists
             if ($this->message) {
                 $currentRule->message($this->message);
