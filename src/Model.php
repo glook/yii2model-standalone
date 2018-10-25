@@ -5,8 +5,7 @@
 
 namespace Glook\Yii2Model;
 use ArrayObject;
-use Yii2Model\base\Model as BaseModel;
-use Yii2Model\ModelValidator;
+use Glook\Yii2Model\base\Model as BaseModel;
 use Valitron\Validator;
 
 class Model extends BaseModel
