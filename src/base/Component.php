@@ -5,8 +5,8 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace Yii2Model\base;
-use Yii2Model\base\helpers\BaseStringHelper;
+namespace Glook\Yii2Model\base;
+use Glook\Yii2Model\base\helpers\BaseStringHelper;
 
 /**
  * Component is the base class that implements the *property*, *event* and  features.

@@ -1,17 +1,25 @@
 {
-    "name": "glook/yii2model-standalone",
-    "authors": [
-        {
-            "name": "Andrey Polyakov",
-            "email": "andrey@polyakov.im"
-        }
-    ],
-    "require": {
-        "vlucas/valitron": "^1.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "Glook\\Yii2Model\\": "src/"
-        }
+  "name": "glook/yii2model-standalone",
+  "type": "library",
+  "description": "Use yii2 models without yii",
+  "homepage": "https://github.com/glook/yii2model-standalone",
+  "keywords": [
+    "yii2",
+    "yii2 model"
+  ],
+
+  "authors": [
+    {
+      "name": "Andrey Polyakov",
+      "email": "andrey@polyakov.im"
     }
+  ],
+  "require": {
+    "vlucas/valitron": "^1.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Glook\\Yii2Model\\": "src/"
+    }
+  }
 }

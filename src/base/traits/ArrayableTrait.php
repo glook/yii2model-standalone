@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace Yii2Model\base\traits;
+namespace Glook\Yii2Model\base\traits;
 
 /**
  * ArrayableTrait provides a common implementation of the [[Arrayable]] interface.

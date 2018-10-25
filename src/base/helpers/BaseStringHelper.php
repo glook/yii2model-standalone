@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace Yii2Model\base\helpers;
+namespace Glook\Yii2Model\base\helpers;
 
 
 

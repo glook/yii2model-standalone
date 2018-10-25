@@ -3,7 +3,7 @@
  * Created by: Andrey Polyakov (andrey@polyakov.im)
  */
 
-namespace Yii2Model;
+namespace  Glook\Yii2Model;
 
 
 class ModelValidator

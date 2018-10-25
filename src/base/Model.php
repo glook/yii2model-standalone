@@ -5,16 +5,16 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace Yii2Model\base;
+namespace  Glook\Yii2Model\base;
 
-use Yii2Model\base\traits\ArrayableTrait;
+use Glook\Yii2Model\base\traits\ArrayableTrait;
 use Exception;
 use ArrayAccess;
 use ArrayIterator;
 use ArrayObject;
 use IteratorAggregate;
 use ReflectionClass;
-use Yii2Model\ModelValidator;
+use Glook\Yii2Model\ModelValidator;
 
 /**
  * Model is the base class for data models.

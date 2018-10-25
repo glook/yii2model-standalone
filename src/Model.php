@@ -3,8 +3,7 @@
  * Created by: Andrey Polyakov (andrey@polyakov.im)
  */
 
-namespace Yii2Model;
-
+namespace Glook\Yii2Model;
 use ArrayObject;
 use Yii2Model\base\Model as BaseModel;
 use Yii2Model\ModelValidator;
