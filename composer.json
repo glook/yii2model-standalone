@@ -1,0 +1,17 @@
+{
+    "name": "glook/yii2model-standalone",
+    "authors": [
+        {
+            "name": "Andrey Polyakov",
+            "email": "andrey@polyakov.im"
+        }
+    ],
+    "require": {
+        "vlucas/valitron": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Glook\\Yii2Model\\": "src/"
+        }
+    }
+}
