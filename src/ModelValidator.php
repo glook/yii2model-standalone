@@ -5,6 +5,7 @@
 
 namespace Glook\Yii2Model;
 
+use Exception;
 
 class ModelValidator
 {
@@ -20,7 +21,7 @@ class ModelValidator
 
     public function __construct($name, $attributes, $options = [])
     {
-        if (!is_string($name)) throw new \Exception('Validator name must be a string');
+        if (!is_string($name)) throw new Exception('Validator name must be a string');
         if (in_array($name, ['safe', 'unsafe'])) {
             $this->_useValidator = false;
             if ($name === 'unsafe') $this->safe = false;
@@ -76,7 +77,7 @@ class ModelValidator
             $ruleMethod = 'validate' . ucfirst($this->name);
 
             if (!method_exists($validator, $ruleMethod) && !method_exists($model, $ruleMethod))
-                throw new \Exception("Rule '{$this->name}' has not been registered");
+                throw new Exception("Rule '{$this->name}' has not been registered");
 
             if (method_exists($model, $ruleMethod)) {
                 return [[$model, $ruleMethod], $attribute];

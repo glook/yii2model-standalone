@@ -6,6 +6,8 @@
  */
 
 namespace Glook\Yii2Model\base;
+
+use Exception;
 use Glook\Yii2Model\base\helpers\BaseStringHelper;
 
 /**
@@ -98,8 +100,8 @@ class Component
      * will be implicitly called when executing `$value = $component->property;`.
      * @param string $name the property name
      * @return mixed the property value
-     * @throws UnknownPropertyException if the property is not defined
-     * @throws InvalidCallException if the property is write-only.
+     * @throws Exception if the property is not defined
+     * @throws Exception if the property is write-only.
      * @see __set()
      */
     public function __get($name)
@@ -112,10 +114,10 @@ class Component
 
 
         if (method_exists($this, 'set' . $name)) {
-            throw new InvalidCallException('Getting write-only property: ' . get_class($this) . '::' . $name);
+            throw new Exception('Getting write-only property: ' . get_class($this) . '::' . $name);
         }
 
-        throw new UnknownPropertyException('Getting unknown property: ' . get_class($this) . '::' . $name);
+        throw new Exception('Getting unknown property: ' . get_class($this) . '::' . $name);
     }
 
     /**
@@ -130,8 +132,8 @@ class Component
      * will be implicitly called when executing `$component->property = $value;`.
      * @param string $name the property name or the event name
      * @param mixed $value the property value
-     * @throws UnknownPropertyException if the property is not defined
-     * @throws InvalidCallException if the property is read-only.
+     * @throws Exception if the property is not defined
+     * @throws Exception if the property is read-only.
      * @see __get()
      */
     public function __set($name, $value)
@@ -151,10 +153,10 @@ class Component
 
 
         if (method_exists($this, 'get' . $name)) {
-            throw new InvalidCallException('Setting read-only property: ' . get_class($this) . '::' . $name);
+            throw new Exception('Setting read-only property: ' . get_class($this) . '::' . $name);
         }
 
-        throw new UnknownPropertyException('Setting unknown property: ' . get_class($this) . '::' . $name);
+        throw new Exception('Setting unknown property: ' . get_class($this) . '::' . $name);
     }
 
     /**
@@ -191,7 +193,7 @@ class Component
      * Do not call this method directly as it is a PHP magic method that
      * will be implicitly called when executing `unset($component->property)`.
      * @param string $name the property name
-     * @throws InvalidCallException if the property is read only.
+     * @throws Exception if the property is read only.
      * @see http://php.net/manual/en/function.unset.php
      */
     public function __unset($name)
@@ -202,7 +204,7 @@ class Component
             return;
         }
 
-        throw new InvalidCallException('Unsetting an unknown or read-only property: ' . get_class($this) . '::' . $name);
+        throw new Exception('Unsetting an unknown or read-only property: ' . get_class($this) . '::' . $name);
     }
 
 

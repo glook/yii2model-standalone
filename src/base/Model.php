@@ -8,6 +8,7 @@
 namespace  Glook\Yii2Model\base;
 
 use Glook\Yii2Model\base\traits\ArrayableTrait;
+use Glook\Yii2Model\base\helpers\BaseInflector as Inflector;
 use Exception;
 use ArrayAccess;
 use ArrayIterator;

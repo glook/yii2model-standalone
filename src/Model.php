@@ -4,7 +4,9 @@
  */
 
 namespace Glook\Yii2Model;
+
 use ArrayObject;
+use Exception;
 use Glook\Yii2Model\base\Model as BaseModel;
 use Valitron\Validator;
 
@@ -21,6 +23,7 @@ class Model extends BaseModel
         $this->_validatorInstance = new Validator([], [], $this->getLanguage());
         $this->init();
     }
+
     /**
      * This method is invoked before validation starts.
      * The default implementation raises a `beforeValidate` event.
@@ -72,7 +75,7 @@ class Model extends BaseModel
                 $validator = ModelValidator::createValidator($rule[1], $rule[0], array_slice($rule, 2));
                 $validators->append($validator);
             } else {
-                throw new \Exception('Invalid validation rule: a rule must specify both attribute names and validator type.');
+                throw new Exception('Invalid validation rule: a rule must specify both attribute names and validator type.');
             }
         }
 
